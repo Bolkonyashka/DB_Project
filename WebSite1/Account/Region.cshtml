@@ -1,0 +1,6 @@
+﻿@{
+    var db = Database.Open("master");
+    var sql = @"SELECT SS, FULLNAME, [INDEX] FROM [BD_Project_DB].[dbo].regions ORDER BY FULLNAME";
+    var data = db.Query(sql);
+    Json.Write(data, Response.Output);
+}
